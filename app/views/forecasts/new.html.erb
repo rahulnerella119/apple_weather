@@ -1,0 +1,21 @@
+<h1>Get Forecast</h1>
+<!-- form_with is used to generate a form with a specific URL and method -->
+<%= form_with url: forecast_path, method: :get, local: true do |f| %>
+  <div>
+    <!-- label is used to generate a label for the form field -->
+    <!-- text_field is used to generate a text input field for the form -->
+    <!-- address is the name of the input field -->
+    <!-- value is used to set the value of the input field to the value of the address parameter -->
+    <!-- size is used to set the size of the input field -->
+    <%= f.label :address, "Address or ZIP" %><br>
+    <%= f.text_field :address, value: params[:address], size: 60 %>
+  </div>
+  <div>
+    <!-- submit is used to generate a submit button for the form -->
+    <!-- Get Forecast is the text that will appear on the submit button -->
+    <%= f.submit "Get Forecast" %>
+  </div>
+<% end %>
+<!-- flash is used to display any alert messages -->
+<%= flash[:alert] %>
+
